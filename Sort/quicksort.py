@@ -1,5 +1,5 @@
 #-*- coding:utf-8 -*-
-def quick_sort(lists, left, right):
+def quick_sort(input_list, left, right):
 	"""
 	input: to be sorted list, start index and end index
 	return: ordered list
@@ -7,27 +7,27 @@ def quick_sort(lists, left, right):
 	author: winter
 	"""
 	if left >= right:
-		return lists
+		return input_list
 
-	key = lists[left]   # select key value
+	key = input_list[left]   # select key value
 	low = left
 	high = right
 	while low < high:
-		while low < high and lists[high] >= key:
+		while low < high and input_list[high] >= key:
 			high-=1
 
-		lists[low] = lists[high]
-		while low < high and lists[low] <= key:
+		input_list[low] = input_list[high]
+		while low < high and input_list[low] <= key:
 			low += 1
 
-		lists[high] = lists[low]
+		input_list[high] = input_list[low]
 
-	lists[high] = key
+	input_list[low] = key
 
-	quick_sort(lists, left, low-1)
-	quick_sort(lists, low+1, right)
+	quick_sort(input_list, left, low-1)
+	quick_sort(input_list, low+1, right)
 
-	return lists
+	return input_list
 
 
 if __name__ == "__main__":
