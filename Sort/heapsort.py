@@ -14,7 +14,7 @@ def adjust_heap(input_list, i, size):
 			adjust_heap(input_list, max_index, size)
 
 def build_heap(input_list, size):
-	for i in range(0, (size // 2))[::-1]:
+	for i in range(0, (size // 2))[::-1]:               #Python3中的 / 得到的是浮点数，// 得到int数据才能放到range中
 		adjust_heap(input_list, i, size)
 
 def heap_sort(input_list):
@@ -32,7 +32,7 @@ def heap_sort(input_list):
 
 	build_heap(result, count)
 
-	for i in range(0, count)[::-1]:
+	for i in range(0, count)[::-1]:                   # 这里的[::-1]是用来逆序的
 		result[0], result[i] = result[i], result[0]
 		adjust_heap(result, 0, i)
 	return result
