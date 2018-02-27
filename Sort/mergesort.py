@@ -1,18 +1,18 @@
 #-*- coding:utf-8 -*-
 def merge(left, right):
 	i, j = 0, 0
-	result = []
-	while i < len(left) and j < len(right) :
-		if left[i] <= right[j]:
-			result.append(left[i])
+	merge_list = []
+	while i < len(left) and j < len(right):       #扫描第一段和第二段序列直到有一个扫描结束
+		if left[i] <= right[j]:                   #判断第一段序列和第二段序列中取出的数哪个更小，将其存入合并序列中，并继续向下扫描
+			merge_list.append(left[i])
 			i += 1
 		else:
-			result.append(right[j])
+			merge_list.append(right[j])
 			j += 1
-	result += left[i:]
-	result += right[j:]
+	merge_list += left[i:]    #若第一段序列未扫描完，将其全部复制加到序列后面
+	merge_list += right[j:]   #若第二段序列未扫描完，将其全部复制加到序列后面
 
-	return result
+	return merge_list
 
 def merge_sort(input_list):
 	"""
