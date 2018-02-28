@@ -35,5 +35,3 @@ if __name__ == "__main__":
 	print("排序前：", array1)
 	array2 = quick_sort(array1, 0, 5)
 	print("排序后：", array2)
-
-
