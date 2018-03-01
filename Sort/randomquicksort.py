@@ -15,7 +15,7 @@ def random_quick_sort(input_list, left, right):
 
 	key = result[index]   # select key value
 	result[index], result[right] = result[right], result[index]    #随机索引值与最后一个元素互换
-	small = left - 1  
+	small = left - 1                                               #记录的是比索引值对应元素小的元素的索引
 
 	for i in range(left, right):                                   #从头开始遍历与随机索引对应的值进行比较
 		if(result[i] < result[right]):
