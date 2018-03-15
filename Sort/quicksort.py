@@ -31,7 +31,10 @@ def quick_sort(input_list, left, right):
 
 
 if __name__ == "__main__":
-	array1 = [30, 40, 60, 10, 20, 50]
-	print("排序前：", array1)
-	array2 = quick_sort(array1, 0, 5)
-	print("排序后：", array2)
+	n = input("请输入要排序数的个数:")
+	print("生成%d个随机数中......" % int(n))
+	array1 = random.sample(range(100), int(n))
+	print("生成的随机数列为：", array1)
+	array2 = quick_sort(array1)
+	print("排序后序列为：", array2)
+
