@@ -8,10 +8,11 @@ if __name__ == "__main__":
 	buf = []
 	cnt = 0
 
-	for i in range(1, 12 ):
+	for i in range(2, 6):
 		buf.append(i)
 
 		if judge(buf):
 			cnt += 1
+			buf = []
 
 	print(cnt)	

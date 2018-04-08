@@ -31,3 +31,52 @@ if __name__ == "__main__":
 """
 更简单一点的办法就是: input_str.replace(' ', 'zz')
 """
+#C++版本：
+#include <iostream>
+#include <string>
+using namespace std;
+void replaceSpace(char *str,int length) {
+        if(str == NULL || length <= 0)
+            return;
+        int spacenum = 0;
+        int oldstrnum = 0;
+        while(str[oldstrnum] != '\0')
+        {
+
+            if(str[oldstrnum] == ' ')
+                spacenum++;
+            oldstrnum++;
+        }
+        cout<<spacenum<<endl<<oldstrnum;
+        int newstrlen = oldstrnum + 2*spacenum;
+        str[newstrlen] = '\0';
+        if(newstrlen > length)
+            return;
+        int p1 = oldstrnum - 1;
+        int p2 = newstrlen - 1;
+
+        while(p1>=0 && p2>p1)
+        {
+            if(str[p1] == ' ')
+            {
+                str[p2--] = '0';
+                str[p2--] = '2';
+                str[p2--] = '%';
+            }
+            else
+                str[p2--] = str[p1];
+
+            p1--;
+
+        }
+
+}
+
+int main()
+{
+    char c[] = "Hello world!";
+    replaceSpace(c, 100);
+    cout<<c;
+
+    return 0;
+}
