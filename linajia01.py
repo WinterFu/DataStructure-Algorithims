@@ -14,3 +14,21 @@ print(len(lamp_num))
 
 
 
+def leaststicknum(n):
+	max_num = 15
+	d, p = 1, 2
+	drop_array = [1]
+	while(p <= max_num):
+		drop_array.append(p)
+		d, p = p, d + p
+	stick_len_array = [i+1 for i in range(n)]
+	print(drop_array, stick_len_array)
+
+	return len(set(drop_array) & set(stick_len_array)) - 2
+
+if __name__ == "__main__":
+	n = 5
+	min_sticks = leaststicknum(n)
+	print(min_sticks)
+
+
